@@ -208,7 +208,7 @@ pam_mkhd_copy(pam_handle_t *pamh, const struct passwd *pwent,
 			return PAM_PERM_DENIED;
 		}
 
-		while ((len = read(ffd, newto, 65546)) > 0)
+		while ((len = read(ffd, newto, 65536)) > 0)
 		{
 			if (write(tfd, newto, len) == -1)
 			{
